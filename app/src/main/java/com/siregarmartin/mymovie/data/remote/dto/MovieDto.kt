@@ -1,8 +1,10 @@
 package com.siregarmartin.mymovie.data.remote.dto
 
-data class MovieResponse(
+import com.google.gson.annotations.SerializedName
+
+data class MovieDto(
     val page: Int,
-    val movieResults: List<MovieResult>,
+    val results: List<MovieResult>,
     val total_pages: Int,
     val total_results: Int
 )

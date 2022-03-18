@@ -1,5 +1,7 @@
 package com.siregarmartin.mymovie.data.remote.dto
 
+import com.siregarmartin.mymovie.domain.model.Movie
+
 data class MovieResult(
     val adult: Boolean,
     val backdrop_path: String,
@@ -16,3 +18,15 @@ data class MovieResult(
     val vote_average: Double,
     val vote_count: Int
 )
+
+fun MovieResult.toMovie(): Movie {
+    return Movie(
+        id = id,
+        title = title,
+        overview = overview,
+        posterPath = poster_path,
+        backdropPath = backdrop_path,
+        rating = vote_average,
+        releaseDate = release_date
+    )
+}
